@@ -3,7 +3,7 @@
 @section('metaTitle', 'Comics')
 
 @section('main')
-  <table>
+  <table class="table table-dark table-hover">
     <thead>
       <th>id</th>
       <th>title</th>
