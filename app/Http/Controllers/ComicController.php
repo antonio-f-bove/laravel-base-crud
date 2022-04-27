@@ -14,7 +14,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+        $comics = Comic::withTrashed()->get();
         return view('comics.index', compact('comics'));
     }
 
@@ -90,6 +90,25 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        if (!$comic->trashed()) {
+            $comic->delete();
+        } else {
+            $comic->forceDelete();
+        }
+
+        return redirect()->route('comics.index');
+    }
+
+    /**
+     * Restore the specified soft-deleated resource to storage
+     * 
+     * 
+     * 
+     */
+    public function restore(Comic $comic)
+    {
+        $comic->restore();
+
+        return redirect()->route('comics.index');
     }
 }

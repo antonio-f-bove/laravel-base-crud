@@ -6,9 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('metaTitle')</title>
 
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('./css/app.css') }}">
 </head>
 <body>
+
+  @include('partials.header')
   
   @yield('main')
 

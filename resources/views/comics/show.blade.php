@@ -10,23 +10,23 @@
   
   <section>
     <dl>
-      <dt>Title</dt>
+      <dt class="h3">Title</dt>
       <dd>{{ $comic->title }}</dd>
-      <dt>description</dt>
+      <dt class="h3">description</dt>
       <dd>{{ $comic->description }}</dd>
-      <dt>thumb</dt>
+      <dt class="h3">thumb</dt>
       <dd>{{ $comic->thumb }}</dd>
-      <dt>price</dt>
+      <dt class="h3">price</dt>
       <dd>{{ $comic->price }}</dd>
-      <dt>series</dt>
+      <dt class="h3">series</dt>
       <dd>{{ $comic->series }}</dd>
-      <dt>sale_date</dt>
+      <dt class="h3">sale_date</dt>
       <dd>{{ $comic->sale_date }}</dd>
-      <dt>type</dt>
+      <dt class="h3">type</dt>
       <dd>{{ $comic->type }}</dd>
-      <dt>created_at</dt>
+      <dt class="h3">created_at</dt>
       <dd>{{ $comic->created_at }}</dd>
-      <dt>updated_at</dt>
+      <dt class="h3">updated_at</dt>
       <dd>{{ $comic->updated_at }}</dd>
     </dl>
 

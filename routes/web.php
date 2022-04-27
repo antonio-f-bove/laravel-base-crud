@@ -18,3 +18,5 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('comics', 'ComicController');
+
+Route::post('comics/{comic}/restore', 'ComicController@restore')->name('comics.restore');

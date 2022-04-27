@@ -10962,3 +10962,15 @@ a.text-dark:focus {
   }
 }
 
+.custom-list {
+  -webkit-padding-start: 5px;
+          padding-inline-start: 5px;
+  margin-bottom: 0;
+}
+
+ul.custom-list > li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+

@@ -23,6 +23,7 @@ class CreateComicsTable extends Migration
             $table->date('sale_date');
             $table->char('type', 50);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
