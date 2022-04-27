@@ -41,8 +41,7 @@
         <input type="text" name="type" id="input-type" value="{{ $comic->type }}">
       </div>
       <div class="p-3">
-        <button type="submit">Add comic</button>
-        <button type="reset">Reset</button>
+        <button type="submit">Update</button>
       </div>
     </form>
   </main>
