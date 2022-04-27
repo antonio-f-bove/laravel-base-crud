@@ -35,8 +35,12 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {      
+        $item = new Comic();
+        $item->fill($request->all());
+        $item->save();
+
+        return redirect()->route('comics.show', $item);
     }
 
     /**
