@@ -24,7 +24,7 @@ class StoreUpdateComic extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:comics|max:50|string',
+            'title' => 'required|max:50|string',
             'description' => 'required|string',
             'thumb' => 'required|url',
             'price' => 'required|numeric|min:0',

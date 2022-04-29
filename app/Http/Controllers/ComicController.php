@@ -77,8 +77,8 @@ class ComicController extends Controller
      */
     public function update(StoreUpdateComic $request, Comic $comic)
     {
-        $data = $request->all();
-        $comic->update($data);
+        $validated = $request->validated();
+        $comic->update($validated);
 
         return redirect(route('comics.show', $comic));
     }
