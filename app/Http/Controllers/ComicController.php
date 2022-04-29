@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateComic;
 use App\models\Comic;
 use Illuminate\Http\Request;
 
@@ -34,12 +35,12 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateComic $request)
     {      
-        $data = $request->all();
+        $validated = $request->validated();
 
         $newComic = new Comic();
-        $newComic->fill($data);
+        $newComic->fill($validated);
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic);
@@ -102,8 +103,8 @@ class ComicController extends Controller
     /**
      * Restore the specified soft-deleated resource to storage
      * 
-     * 
-     * 
+     * @param  \App\models\Comic  $comic
+     * @return \Illuminate\Http\Response
      */
     public function restore(Comic $comic)
     {

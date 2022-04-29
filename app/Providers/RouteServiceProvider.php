@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\models\Comic;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,12 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+
+        // explicit binding per che la dependency injection di Comic
+        // riesca a trovare anche i trashed. GRAZIE ALESSIO!
+        Route::bind('comic', function ($id) {
+            return Comic::withTrashed()->findOrFail($id);
+        });
     }
 
     /**
