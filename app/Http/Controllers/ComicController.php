@@ -75,7 +75,7 @@ class ComicController extends Controller
      * @param  \App\models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(StoreUpdateComic $request, Comic $comic)
     {
         $data = $request->all();
         $comic->update($data);

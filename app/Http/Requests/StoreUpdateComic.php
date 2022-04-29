@@ -24,13 +24,13 @@ class StoreUpdateComic extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:comics|max:50',
-            'description' => 'required',
-            'thumb' => 'required',
-            'price' => 'required',
-            'series' => 'required',
-            'sale_date' => 'required',
-            'type' => 'required',
+            'title' => 'required|unique:comics|max:50|string',
+            'description' => 'required|string',
+            'thumb' => 'required|url',
+            'price' => 'required|numeric|min:0',
+            'series' => 'required|string',
+            'sale_date' => 'required|date',
+            'type' => 'required|string',
         ];
     }
 }
